@@ -6,10 +6,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to React/Electron</h2>
+          <h2>App Review</h2>
         </div>
         <p className="App-intro">
-          Hello Electron!
+          Hello World!
         </p>
       </div>
     );
