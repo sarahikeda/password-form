@@ -18,7 +18,7 @@
   "homepage": "./",
   "main": "src/main.js",
   "scripts": {
-    "start": "nf start -p 3000",
+    "start": "nf start -p 8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
