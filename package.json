@@ -1,0 +1,29 @@
+{
+  "name": "electron-react-boilerplate",
+  "version": "1.0.0",
+  "description": "boilerplate for admin portal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrownet/electron-react-boilerplate.git"
+  },
+  "keywords": [
+    "eletron",
+    "react"
+  ],
+  "author": "Elsa Wang & Sarah Ing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrownet/electron-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/darrownet/electron-react-boilerplate#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4",
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.3"
+  }
+}
