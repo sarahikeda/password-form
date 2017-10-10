@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { observer } from "mobx-react";
+import { Login } from '../Login/Login';
+import { Search } from '../Search/Search';
 
-class App extends Component {
+@observer class App extends React.Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>App Review</h2>
+          <Search />
         </div>
-        <p className="App-intro">
-          Hello World!
-        </p>
+        <Login />
       </div>
     );
   }
