@@ -3,6 +3,7 @@ $header-padding:5px;
 $header-size:16px;
 $header-color:rgba(0,0,0,0.5);
 .App-header {
+
   height: $header-height;
   padding: $header-padding;
   font-family: Impact, Charcoal, sans-serif;
@@ -13,7 +14,11 @@ $header-color:rgba(0,0,0,0.5);
 
 .App-body {
   display: flex;
-  margin-left: 90px
+  position: relative;
+  img{
+    position: absolute;
+    left:100px;
+  }
 }
 .App-intro {
   font-size: large; }

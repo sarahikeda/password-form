@@ -11,7 +11,9 @@ $login-marging:10px;
       font-size: 20px;
       font-weight: bold;
       margin: $login-marging;
-    }
+    };
+    position: relative;
+    left:350px;
   }
 
   .Login form {
