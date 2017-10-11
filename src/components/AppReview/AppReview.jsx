@@ -7,6 +7,7 @@ export class AppReview extends React.Component {
       <div className="app-review">
         <Table>
           <tbody>
+{/*map out the elements and check for status rather than hard code*/}            
             <tr>
               <td><img className='app-img' alt="screenshot of app" src={require('../../../images/app-img.png')} /></td>
               <td>
