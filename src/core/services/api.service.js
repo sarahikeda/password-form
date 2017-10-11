@@ -8,10 +8,7 @@ class ApiService {
 	}
 
 	getLoginInfo=()=>{
-		return axios.get("review-status.json");
-	}
-	signIn=()=>{
-		
+		return axios.get("login-data.json");
 	}
 }
 

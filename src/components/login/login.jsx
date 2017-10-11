@@ -26,6 +26,13 @@ import '../../../styles/Login/login.css';
     }
   }
 
+  onButtonClick =()=>{
+    const {userid,password} = this.store.loginInfo;
+    console.log(userid,password);
+    this.store.login(userid,password);
+    //this.store.validateSignIn(userid,password);
+  }
+
   validateForm=()=>this.store.loginInfo.userid && this.store.loginInfo.password
 
   render(){
@@ -50,13 +57,14 @@ import '../../../styles/Login/login.css';
             <Button
               bsSize="large"
               disabled={!this.validateForm()}
+              onClick={this.onButtonClick}
               type="submit"
               className="sign-in">
               Sign In
             </Button>
           </FormGroup>
-
         </form>
+        <p>{this.store.errorLogin}</p>
       </div>
     )
   }

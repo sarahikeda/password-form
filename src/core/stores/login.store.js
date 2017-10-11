@@ -1,28 +1,38 @@
-import { action, computed, observable} from 'mobx';
+import { action, observable, computed} from 'mobx';
 import { apiService } from '../services/api.service';
 
 class LoginStore {
 
   // OBSERVABLES
 
-	@observable response = {};
   @observable loginInfo = {userid:'',password:''};
 	@observable reviewStatus = '';
+  @observable errorLogin ='';
+  @observable credentialResponse = {};
   //actions
-  @action loadData=()=>{
+  @action updateUserId=uid=> this.loginInfo.userid=uid
+
+  @action updatePwd=pwd=>this.loginInfo.password=pwd
+
+  @action login=(uid,pwd)=>{
     let success, failure;
     success = res => {
-      this.response = res.data.data;
+       this.credentialResponse = res.data.login;
+       console.log(this.credentialResponse);
+       if(uid !== res.data.login.userid || pwd!==res.data.login.password){
+         this.errorLogin = 'Error Login';
+       }
     };
     failure = (err) => {
 			console.log(err);
 		};
-    apiService.getMetaData().then(success,failure);
+    apiService.getLoginInfo().then(success,failure);
   }
 
-  @action updateUserId=uid=> this.loginInfo.userid=uid
 
-  @action updatePwd=pwd=>this.loginInfo.password=pwd
+  @computed get validLogin(){
+    //console.log(this.loginSucceeded);
+  }
 
 }
 
