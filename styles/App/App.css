@@ -3,7 +3,7 @@
   padding: 5px;
   font-family: sans-serif,monospace;
   font-size: 16px;
-  color: grey; }
+  font-weight: bold; }
 
 .App-body {
   display: flex;
