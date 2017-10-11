@@ -1,6 +1,10 @@
 .App-header {
   height: 50px; }
 
+.header {
+  margin: 10px 10px 0 0;
+  text-align: right; }
+
 .welcome-info {
   position: relative;
   display: flex;
