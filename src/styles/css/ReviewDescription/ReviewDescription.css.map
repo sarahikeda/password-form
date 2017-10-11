@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,qBAAsB;EACpB,MAAM,EAAE,aAAa;EACrB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,gBAAgB;EACvB,QAAQ,EAAE,eAAe",
+"sources": ["../../scss/ReviewDescription/ReviewDescription.scss"],
+"names": [],
+"file": "ReviewDescription.css"
+}
