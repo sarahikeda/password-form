@@ -19,24 +19,25 @@
 
 .welcome-text {
   width: 400px;
-  display: block;
+  height: 50px;
 }
 
-.user-info {
+.login {
   position: absolute;
   margin: -100px 0 0 250px;
 }
 
-.user-info label {
-  display: block;
-  margin: 5px;
+.login input {
+  width: 250px;
+  margin-top: 5px;
 }
 
 .user-fields {
-  width: 250px;
+  display: block;
+  margin-top: 5px;
 }
 
-.submit-button {
+.submit-form {
   width: 80px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
