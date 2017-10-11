@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,aAAc;EACZ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI",
+"sources": ["../../scss/Welcome/Welcome.scss"],
+"names": [],
+"file": "Welcome.css"
+}
