@@ -6,6 +6,13 @@ class ApiService {
 	getReviewStatus=()=>{
 		return axios.get("review-status.json");
 	}
+
+	getLoginInfo=()=>{
+		return axios.get("review-status.json");
+	}
+	signIn=()=>{
+		
+	}
 }
 
 export const apiService = new ApiService();

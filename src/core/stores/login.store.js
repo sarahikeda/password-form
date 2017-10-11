@@ -20,15 +20,9 @@ class LoginStore {
     apiService.getMetaData().then(success,failure);
   }
 
-  //COMPUTEDS
+  @action updateUserId=uid=> this.loginInfo.userid=uid
 
-	@computed get lastElement() {
-		return this.names[this.names.length - 1];
-	}
-
-	@computed get getAllKeyNames(){
-		return Object.keys(this.response);
-	}
+  @action updatePwd=pwd=>this.loginInfo.password=pwd
 
 }
 

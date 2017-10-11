@@ -11,33 +11,41 @@ import '../../../styles/Login/login.css';
     this.store = this.props.store;
   }
   handleSubmit = event => event.preventDefault();
+
   handleChange=(e)=>{
-    console.log(e.target);
+    const target_id=e.target.id;
+    console.log(target_id);
+
+    switch (target_id) {
+      case 'uid':
+        return this.store.updateUserId(e.target.value);
+      case 'pwd':
+        return this.store.updatePwd(e.target.value);
+      default:
+        return event.preventDefault();
+    }
   }
 
-  validateForm=()=>{
-
-  }
+  validateForm=()=>this.store.loginInfo.userid && this.store.loginInfo.password
 
   render(){
     return(
       <div className="Login">
         <p className='text'>Welcome to the FirstNet App Review Utility. Please sign in to get started.</p>
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="userid" bsSize="large">
+          <FormGroup controlId="uid" bsSize="large">
             <ControlLabel className="controll-label">User ID: </ControlLabel>
             <FormControl
               autoFocus
-              type="userid"
+              type="uid"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
+          <FormGroup controlId="pwd" bsSize="large">
             <ControlLabel className="controll-label" >Password:</ControlLabel>
             <FormControl
-              value={this.login}
               onChange={this.handleChange}
-              type="password"
+              type="pwd"
             />
             <Button
               bsSize="large"
