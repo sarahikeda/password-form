@@ -1,5 +1,5 @@
 import React from 'react';
-import { Welcome } from '../Welcome/Welcome';
+import { SignInPrompt } from '../SignInPrompt/SignInPrompt';
 
 
 export class Login extends React.Component {
@@ -36,7 +36,7 @@ export class Login extends React.Component {
         <div className="welcome-info">
           <img className='first-net-logo' alt="first-net-logo" src={require('../../../images/logo.png')} />
           <div className="welcome-text">
-            <Welcome />
+            <SignInPrompt />
           </div>
         </div>
         <form className="user-info" onSubmit={this.handleSubmit}>
