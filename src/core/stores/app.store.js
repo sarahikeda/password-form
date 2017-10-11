@@ -8,27 +8,27 @@ class AppStore {
 
 	@observable response = {};
 
-	@observable names = [];
+	//@observable names = [];
+
+	@observable reviewStatus = {};
   //actions
   @action loadData=()=>{
     let success, failure;
     success = res => {
-      this.response = res.data.data;
+
+      this.response = res.data;
+			this.reviewStatus = this.response.data;
     };
     failure = (err) => {
 			console.log(err);
 		};
-    apiService.getMetaData().then(success,failure);
+    apiService.getReviewStatus().then(success,failure);
   }
 
   //COMPUTEDS
 
-	@computed get lastElement() {
-		return this.names[this.names.length - 1];
-	}
-
-	@computed get getAllKeyNames(){
-		return Object.keys(this.response);
+	@computed get getStatus() {
+		return this.reviewStatus.status;
 	}
 
 }

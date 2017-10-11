@@ -7,6 +7,6 @@ import "../styles/App/App.css";
 
 
 ReactDOM.render(
-	<App resource={appStore} />,
+	<App appStore={appStore} />,
 	document.getElementById("root")
 );

@@ -5,16 +5,14 @@ import '../../../styles/Login/login.css';
 
 
 
-export default class Login extends React.Component{
+@observer class Login extends React.Component{
   constructor(props){
     super(props);
-    this.login = this.props.loginStore;
+    this.store = this.props.store;
   }
-  handleSubmit=()=>{
-
-  }
-  handleChange=()=>{
-
+  handleSubmit = event => event.preventDefault();
+  handleChange=(e)=>{
+    console.log(e.target);
   }
 
   validateForm=()=>{
@@ -55,3 +53,5 @@ export default class Login extends React.Component{
     )
   }
 }
+
+export default Login;

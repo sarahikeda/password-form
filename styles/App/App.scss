@@ -10,6 +10,7 @@ $header-color:rgba(0,0,0,0.5);
   font-size: $header-size;
   font-weight: bold;
   color: $header-color;
+  left:5px;
 }
 
 .App-body {
@@ -17,7 +18,7 @@ $header-color:rgba(0,0,0,0.5);
   position: relative;
   img{
     position: absolute;
-    left:100px;
+    left:30px;
   }
 }
 .App-intro {

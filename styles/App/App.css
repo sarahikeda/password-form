@@ -4,14 +4,15 @@
   font-family: Impact, Charcoal, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(0, 0, 0, 0.5);
+  left: 5px; }
 
 .App-body {
   display: flex;
   position: relative; }
   .App-body img {
     position: absolute;
-    left: 100px; }
+    left: 30px; }
 
 .App-intro {
   font-size: large; }
