@@ -32,14 +32,14 @@ export class Login extends React.Component {
 
   render() {
     return (
-      <div className="landing">
+      <div className="login">
         <div className="welcome-info">
           <img className='first-net-logo' alt="first-net-logo" src={require('../../../images/logo.png')} />
           <div className="welcome-text">
             <Welcome />
           </div>
         </div>
-        <form className="login" onSubmit={this.handleSubmit}>
+        <form className="user-info" onSubmit={this.handleSubmit}>
           <label>User ID</label>
           <input type='text' className="user-fields" name="id" value={this.state.id} onChange={this.handleIdChange}/>
           <label className="user-fields"><span>Password</span></label>
