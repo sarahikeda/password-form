@@ -1,12 +1,14 @@
 $header-height:150px;
 $header-padding:5px;
 $header-size:16px;
+$header-color:rgba(0,0,0,0.5);
 .App-header {
   height: $header-height;
   padding: $header-padding;
-  font-family: sans-serif,monospace;
+  font-family: Impact, Charcoal, sans-serif;
   font-size: $header-size;
   font-weight: bold;
+  color: $header-color;
 }
 
 .App-body {
