@@ -46,4 +46,16 @@
 .app-created-date {
   font-size: 10px; }
 
+.app-profile-info {
+  margin: 0 60px 0 20px; }
+
+.app-profile-info tr {
+  border-bottom: 1px solid gray; }
+
+.app-description-info {
+  margin: 20px 0 0 40px;
+  height: 200px;
+  width: 700px !important;
+  overflow: auto !important; }
+
 /*# sourceMappingURL=index.css.map */
