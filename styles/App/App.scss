@@ -1,0 +1,33 @@
+$header-height:150px;
+$header-padding:5px;
+$header-size:16px;
+$header-color:rgba(0,0,0,0.5);
+.App-header {
+
+  height: $header-height;
+  padding: $header-padding;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: $header-size;
+  font-weight: bold;
+  color: $header-color;
+  left:5px;
+}
+
+.App-body {
+  display: flex;
+  position: relative;
+  img{
+    position: absolute;
+    left:30px;
+  }
+}
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=App.css.map */

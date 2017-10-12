@@ -3,32 +3,62 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "electron": "^1.7.8",
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.4.0",
     "foreman": "^2.0.0",
     "react-scripts": "0.8.5"
   },
   "dependencies": {
     "axios": "^0.16.2",
+<<<<<<< HEAD
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "bootstrap": "^3.3.7",
+=======
+    "babel": "^6.23.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+>>>>>>> 7e2871f9e8061325f3e123967231bf542c0de9d3
     "lodash": "^4.17.4",
     "mobx": "^3.3.1",
     "mobx-react": "^4.3.3",
     "react": "^15.4.2",
     "react-bootstrap": "^0.31.3",
+<<<<<<< HEAD
     "react-dom": "^15.4.2",
     "react-router": "^4.2.0"
+=======
+    "react-dom": "^15.4.2"
+>>>>>>> 7e2871f9e8061325f3e123967231bf542c0de9d3
   },
   "homepage": "./",
   "main": "src/main.js",
   "scripts": {
-    "start": "nf start -p 3000",
+    "start": "nf start -p 8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
     "react-start": "react-scripts start",
+<<<<<<< HEAD
     "sass": "sass --watch src/styles/scss:src/styles/css"
+=======
+    "eslint": "eslint **/src/*.{jsx,js}"
+  },
+  "babel": {
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties"
+    ],
+    "presets": [
+      "react-app",
+      "react"
+    ]
+>>>>>>> 7e2871f9e8061325f3e123967231bf542c0de9d3
   }
 }
