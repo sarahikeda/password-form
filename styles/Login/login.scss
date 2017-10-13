@@ -1,8 +1,8 @@
 $font-family:Helvetica;
-$form-max-width:420px;
+$max-width:380px;
 $padding:2px;
 $marging:10px;
-$top:-45px;
+$top:-50px;
 
 @media all and (min-width: 200px) {
   .Login {
@@ -12,23 +12,21 @@ $top:-45px;
   }
   .Login form {
     font-family: $font-family;
-    max-width: $form-max-width;
+    max-width: $max-width;
     .form-group{
       padding: $padding;
     };
     .form-control{
-      width: 80%;
+      width: 95%;
     };
     .sign-in {
       position: relative;
-      padding: $padding;
       top:$top;
-      left:380px;
+      left:$max-width;
     };
     .error-login{
       position: relative;
       top:$top;
-      padding: $padding;
       left:$padding;
       color:red;
       font-weight: bold;

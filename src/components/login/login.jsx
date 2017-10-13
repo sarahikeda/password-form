@@ -57,7 +57,7 @@ import '../../../styles/Login/login.css';
               type="pwd"
             />
           </FormGroup>
-          <Button className="sign-in" disabled={!this.validateForm()} onClick={this.onButtonClick} type="submit">
+          <Button className="btn-md sign-in" disabled={!this.validateForm()} onClick={this.onButtonClick} type="submit">
             Sign In
           </Button>
          {this.loginFailedMessage()}
