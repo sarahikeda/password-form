@@ -21,6 +21,7 @@ import {loginStore} from '../../core/stores/login.store';
     return (<div className="App">
       <div className="App-header">
         <h3>FirstNet App Review Utility:{this.getStatus()}</h3>
+        <Search />
       </div>
       <div className="App-body">
         <img role="presentation" src={logo}/>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAY;EACV,MAAM,EAAE,aAAa;EACrB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,QAAQ,EAAE,IAAI;;AAGhB,SAAU;EACR,WAAW,EAAE,IAAI;;AAGnB,iBAAkB;EAChB,SAAS,EAAE,IAAI",
+"sources": ["../../scss/AppReview/AppReview.scss"],
+"names": [],
+"file": "AppReview.css"
+}

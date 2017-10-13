@@ -1,0 +1,61 @@
+.App-header {
+  height: 50px; }
+
+.header {
+  margin: 10px 10px 0 0;
+  text-align: right; }
+
+.welcome-info {
+  position: relative;
+  display: flex;
+  flex-flow: row; }
+
+.first-net-logo {
+  margin: 0 20px 0 10px;
+  width: 200px;
+  height: 200px; }
+
+.user-info {
+  position: absolute;
+  margin: -100px 0 0 250px; }
+  .user-info input {
+    width: 250px;
+    margin-top: 5px; }
+
+.user-fields {
+  display: block;
+  margin-top: 5px; }
+
+.submit-form {
+  width: 80px;
+  margin-left: 50px; }
+
+.welcome-text {
+  width: 400px;
+  height: 50px; }
+
+.app-review {
+  margin: 20px 0 0 40px;
+  height: 400px;
+  width: 800px;
+  overflow: auto; }
+
+.app-name {
+  font-weight: bold; }
+
+.app-created-date {
+  font-size: 10px; }
+
+.app-profile-info {
+  margin: 0 60px 0 20px; }
+
+.app-profile-info tr {
+  border-bottom: 1px solid gray; }
+
+.app-description-info {
+  margin: 20px 0 0 40px;
+  height: 200px;
+  width: 700px !important;
+  overflow: auto !important; }
+
+/*# sourceMappingURL=index.css.map */

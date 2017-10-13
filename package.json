@@ -35,6 +35,7 @@
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
     "react-start": "react-scripts start",
+    "sass": "sass --watch src/styles/scss:src/styles/css",
     "eslint": "eslint **/src/*.{jsx,js}"
   },
   "babel": {
