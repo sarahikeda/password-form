@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import Login from '../Login/login';
+import Login from '../Login/Login';
 import logo from '../../../images/logo.png';
 //import Search from '../Search/Search';
 import {loginStore} from '../../core/stores/login.store';
