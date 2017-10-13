@@ -28,14 +28,21 @@
     font-family: Helvetica;
     max-width: 420px; }
     .Login form .form-group {
-      padding: 3px; }
+      padding: 2px; }
     .Login form .form-control {
       width: 80%; }
     .Login form .sign-in {
       position: relative;
-      padding: 3px;
-      top: -50px;
-      left: 400px; } }
+      padding: 2px;
+      top: -45px;
+      left: 380px; }
+    .Login form .error-login {
+      position: relative;
+      top: -45px;
+      padding: 2px;
+      left: 2px;
+      color: red;
+      font-weight: bold; } }
 .welcome-text {
   width: 400px;
   height: 50px; }

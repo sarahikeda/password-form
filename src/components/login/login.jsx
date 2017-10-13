@@ -24,6 +24,10 @@ import '../../../styles/Login/login.css';
     }
   }
 
+  loginFailedMessage=()=>this.store.errorLogin ?
+                          <p className="error-login">{this.store.errorLogin}
+                          <span className="glyphicon glyphicon-warning-sign"></span> </p>:null
+
   onButtonClick =()=>{
     const {userid,password} = this.store.loginInfo;
     console.log(userid,password);
@@ -56,8 +60,9 @@ import '../../../styles/Login/login.css';
           <Button className="sign-in" disabled={!this.validateForm()} onClick={this.onButtonClick} type="submit">
             Sign In
           </Button>
+         {this.loginFailedMessage()}
         </form>
-        <p>{this.store.errorLogin}</p>
+
       </div>
     )
   }

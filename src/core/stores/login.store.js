@@ -20,7 +20,7 @@ class LoginStore {
        this.credentialResponse = res.data.login;
        console.log(this.credentialResponse);
        if(uid !== res.data.login.userid || pwd!==res.data.login.password){
-         this.errorLogin = 'Error Login';
+         this.errorLogin = 'The username or password you enetered is incorrect.';
        }
     };
     failure = (err) => {
