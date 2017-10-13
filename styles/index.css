@@ -1,0 +1,67 @@
+.App-header {
+  height: 100px;
+  padding: 5px;
+  font-family: Impact,sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 5px; }
+
+.App-body {
+  display: flex; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+/*# sourceMappingURL=App.css.map */
+.header {
+  margin: 10px 10px 0 0;
+  text-align: right; }
+
+@media all and (min-width: 200px) {
+  .Login {
+    box-sizing: border-box;
+    position: relative;
+    left: 10px; }
+
+  .Login form {
+    font-family: Helvetica;
+    max-width: 420px; }
+    .Login form .form-group {
+      padding: 3px; }
+    .Login form .form-control {
+      width: 80%; }
+    .Login form .sign-in {
+      position: relative;
+      padding: 3px;
+      top: -50px;
+      left: 400px; } }
+.welcome-text {
+  width: 400px;
+  height: 50px; }
+
+.app-review {
+  margin: 20px 0 0 40px;
+  height: 400px;
+  width: 800px;
+  overflow: auto; }
+
+.app-name {
+  font-weight: bold; }
+
+.app-created-date {
+  font-size: 10px; }
+
+.app-profile-info {
+  margin: 0 60px 0 20px; }
+
+.app-profile-info tr {
+  border-bottom: 1px solid gray; }
+
+.app-description-info {
+  margin: 20px 0 0 40px;
+  height: 200px;
+  width: 700px !important;
+  overflow: auto !important; }
+
+/*# sourceMappingURL=index.css.map */
