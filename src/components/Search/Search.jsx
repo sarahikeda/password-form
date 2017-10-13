@@ -1,7 +1,7 @@
 import React from 'react';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
-export class Search extends React.Component {
+export default class Search extends React.Component {
   render() {
     return (
       <div className="header">

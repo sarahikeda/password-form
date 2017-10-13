@@ -1,5 +1,5 @@
 *.log
 node_modules
-styles/.sass-cache
+.sass-cache/
 *.map
 *.eslintrc.js

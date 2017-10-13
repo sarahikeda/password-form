@@ -7,6 +7,7 @@
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "bootstrap": "^3.3.7",
     "electron": "^1.7.8",
     "eslint": "^4.8.0",
     "eslint-config-google": "^0.9.1",
@@ -35,7 +36,7 @@
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
     "react-start": "react-scripts start",
-    "sass": "sass --watch src/styles/scss:src/styles/css",
+    "sass": "sass --watch styles/.",
     "eslint": "eslint **/src/*.{jsx,js}"
   },
   "babel": {

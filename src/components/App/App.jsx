@@ -2,12 +2,13 @@ import React from 'react';
 import {observer} from 'mobx-react';
 import Login from '../Login/login';
 import logo from '../../../images/logo.png';
+//import Search from '../Search/Search';
 import {loginStore} from '../../core/stores/login.store';
 
 @observer class App extends React.Component {
   constructor(props) {
 		super(props);
-    console.log(this.props.appStore);
+    //console.log(this.props.appStore);
 		this.store = this.props.appStore;
 	}
 
@@ -15,14 +16,15 @@ import {loginStore} from '../../core/stores/login.store';
     this.store.loadData();
   }
 
-  getStatus=()=>this.store.getStatus
+  headerSection=()=>(
+    <div className="App-header">
+      <h3>FirstNet App Review Utility:{this.store.getStatus}</h3>
+    </div>
+  )
 
   render(){
     return (<div className="App">
-      <div className="App-header">
-        <h3>FirstNet App Review Utility:{this.getStatus()}</h3>
-        <Search />
-      </div>
+    {this.headerSection()}
       <div className="App-body">
         <img role="presentation" src={logo}/>
         <Login store={loginStore}/>

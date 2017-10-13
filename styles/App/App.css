@@ -1,22 +1,18 @@
-$header-height:100px;
-$header:5px;
-$header-color:rgba(0,0,0,0.5);
 .App-header {
-  height: $header-height;
-  padding: $header;
+  height: 100px;
+  padding: 5px;
   font-family: Impact,sans-serif;
-  color: $header-color;
-  margin: $header;
-}
+  color: rgba(0, 0, 0, 0.5);
+  margin: 5px; }
 
 .App-body {
-  display: flex;
-}
+  display: flex; }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+/*# sourceMappingURL=App.css.map */
 
 /*# sourceMappingURL=App.css.map */

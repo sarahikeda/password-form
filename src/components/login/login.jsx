@@ -1,9 +1,8 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import {SignInPrompt} from '../SignInPrompt/SignInPrompt';
 import '../../../styles/Login/login.css';
-
-
 
 @observer class Login extends React.Component{
   constructor(props){
@@ -15,7 +14,6 @@ import '../../../styles/Login/login.css';
   handleChange=(e)=>{
     const target_id=e.target.id;
     console.log(target_id);
-
     switch (target_id) {
       case 'uid':
         return this.store.updateUserId(e.target.value);
@@ -38,31 +36,26 @@ import '../../../styles/Login/login.css';
   render(){
     return(
       <div className="Login">
-        <p className='text'>Welcome to the FirstNet App Review Utility. Please sign in to get started.</p>
+        <SignInPrompt/>
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="uid" bsSize="large">
-            <ControlLabel className="controll-label">User ID: </ControlLabel>
+          <FormGroup controlId="uid">
+            <ControlLabel>User ID: </ControlLabel>
             <FormControl
               autoFocus
               type="uid"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="pwd" bsSize="large">
-            <ControlLabel className="controll-label" >Password:</ControlLabel>
+          <FormGroup controlId="pwd" >
+            <ControlLabel>Password:</ControlLabel>
             <FormControl
               onChange={this.handleChange}
               type="pwd"
             />
-            <Button
-              bsSize="large"
-              disabled={!this.validateForm()}
-              onClick={this.onButtonClick}
-              type="submit"
-              className="sign-in">
-              Sign In
-            </Button>
           </FormGroup>
+          <Button className="sign-in" disabled={!this.validateForm()} onClick={this.onButtonClick} type="submit">
+            Sign In
+          </Button>
         </form>
         <p>{this.store.errorLogin}</p>
       </div>
