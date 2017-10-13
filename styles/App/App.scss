@@ -1,19 +1,26 @@
+$header-height:150px;
+$header-padding:5px;
+$header-size:16px;
+$header-color:rgba(0,0,0,0.5);
 .App-header {
-  height: 150px;
-  padding: 5px;
+
+  height: $header-height;
+  padding: $header-padding;
   font-family: Impact, Charcoal, sans-serif;
-  font-size: 16px;
+  font-size: $header-size;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.5);
-  left: 5px; }
+  color: $header-color;
+  left:5px;
+}
 
 .App-body {
   display: flex;
-  position: relative; }
-  .App-body img {
+  position: relative;
+  img{
     position: absolute;
-    left: 30px; }
-
+    left:30px;
+  }
+}
 .App-intro {
   font-size: large; }
 
@@ -22,6 +29,5 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
-/*# sourceMappingURL=App.css.map */
 
 /*# sourceMappingURL=App.css.map */

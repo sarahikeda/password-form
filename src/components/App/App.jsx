@@ -1,17 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {observer} from 'mobx-react';
+import Login from '../Login/login';
+import logo from '../../../images/logo.png';
+import {loginStore} from '../../core/stores/login.store';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>App Review</h2>
-        </div>
-        <p className="App-intro">
-          Hello World!
-        </p>
+@observer class App extends React.Component {
+  constructor(props) {
+		super(props);
+    console.log(this.props.appStore);
+		this.store = this.props.appStore;
+	}
+
+  componentDidMount() {
+    this.store.loadData();
+  }
+
+  getStatus=()=>this.store.getStatus
+
+  render(){
+    return (<div className="App">
+      <div className="App-header">
+        <h3>FirstNet App Review Utility:{this.getStatus()}</h3>
       </div>
-    );
+      <div className="App-body">
+        <img role="presentation" src={logo}/>
+        <Login store={loginStore}/>
+      </div>
+    </div>
+  )
   }
 }
 

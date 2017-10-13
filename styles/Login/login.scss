@@ -1,0 +1,37 @@
+$font-family:Helvetica;
+$form-max-width:400px;
+$form-padding:10px;
+$login-marging:10px;
+
+@media all and (min-width: 480px) {
+  .Login {
+    box-sizing: content-box;
+    .text{
+      font-family: $font-family;
+      font-size: 20px;
+      font-weight: bold;
+      margin: $login-marging;
+    };
+    position: relative;
+    left:300px;
+  }
+
+  .Login form {
+    font-family: $font-family;
+    font-weight: bold;
+    max-width: $form-max-width;
+    .form-group{
+      padding: $form-padding;
+    };
+    .control-label{
+      display: block;
+    };
+    .form-control{
+      width: 300px;
+    };
+    .sign-in{
+      float:right;
+    };
+  }
+
+}
