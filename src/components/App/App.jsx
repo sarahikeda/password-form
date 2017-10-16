@@ -3,6 +3,7 @@ import {observer} from 'mobx-react';
 import LoginAuth from '../Login/LoginAuth';
 import logo from '../../../images/logo.png';
 //import Search from '../Search/Search';
+import AuthRouter from '../Router/routers';
 import {loginStore} from '../../core/stores/login.store';
 
 @observer class App extends React.Component {
@@ -30,7 +31,7 @@ import {loginStore} from '../../core/stores/login.store';
   render(){
     return (<div className="App">
     {this.headerSection()}
-    {this.loginBody()}
+    <AuthRouter subs={this.loginBody} />
     </div>
   )
   }
