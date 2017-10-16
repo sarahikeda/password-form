@@ -9,7 +9,9 @@ const AuthRouter = (props) =>{
   return <Router>
     <div>
       <Route  path="/login" component={body}/>
-      {/*<PrivateRoute path="/protected" component={Protected}/>*/}
+      {/*<PrivateRoute path="/protected" component={Protected}/>*/
+      /*FIX ME for authentification routing, and redirect route warning*/
+      }
       <Redirect from='/' to='/login'/>
     </div>
   </Router>
