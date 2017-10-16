@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import Login from '../Login/Login';
+import LoginAuth from '../Login/LoginAuth';
 import logo from '../../../images/logo.png';
 //import Search from '../Search/Search';
 import {loginStore} from '../../core/stores/login.store';
@@ -27,7 +27,7 @@ import {loginStore} from '../../core/stores/login.store';
     {this.headerSection()}
       <div className="App-body">
         <img role="presentation" src={logo}/>
-        <Login store={loginStore}/>
+        <LoginAuth store={loginStore}/>
       </div>
     </div>
   )

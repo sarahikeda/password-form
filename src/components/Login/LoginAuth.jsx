@@ -4,7 +4,7 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { SignInPrompt } from '../SignInPrompt/SignInPrompt';
 import '../../../styles/Login/login.css';
 
-@observer class Login extends React.Component{
+@observer class LoginAuth extends React.Component{
   constructor(props){
     super(props);
     this.store = this.props.store;
@@ -68,4 +68,4 @@ import '../../../styles/Login/login.css';
   }
 }
 
-export default Login;
+export default LoginAuth;
