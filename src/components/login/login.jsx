@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import {SignInPrompt} from '../SignInPrompt/SignInPrompt';
+import { SignInPrompt } from '../SignInPrompt/SignInPrompt';
 import '../../../styles/Login/login.css';
 
 @observer class Login extends React.Component{

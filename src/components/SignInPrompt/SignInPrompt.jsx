@@ -10,8 +10,7 @@ import React from 'react';
   }
 }*/
 /* since it's just plain text, we can simplify it to function Component*/
-export const SignInPrompt =()=>(
+export const SignInPrompt =()=>
   <section>
     <h3>Welcome to the FirstNet App Review Utility. Please sign in to get started.</h3>
   </section>
-)
