@@ -31,7 +31,7 @@ import {loginStore} from '../../core/stores/login.store';
   render(){
     return (<div className="App">
     {this.headerSection()}
-    <AuthRouter subs={this.loginBody} />
+    <AuthRouter subs={[this.loginBody]} />
     </div>
   )
   }
