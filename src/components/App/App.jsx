@@ -19,16 +19,18 @@ import {loginStore} from '../../core/stores/login.store';
   headerSection=()=>(
     <div className="App-header">
       <h3>FirstNet App Review Utility:{this.store.getStatus}</h3>
-    </div>
-  )
+    </div>)
+
+  loginBody=()=>(
+    <div className="App-body">
+      <img role="presentation" src={logo}/>
+      <LoginAuth store={loginStore}/>
+    </div>)
 
   render(){
     return (<div className="App">
     {this.headerSection()}
-      <div className="App-body">
-        <img role="presentation" src={logo}/>
-        <LoginAuth store={loginStore}/>
-      </div>
+    {this.loginBody()}
     </div>
   )
   }
