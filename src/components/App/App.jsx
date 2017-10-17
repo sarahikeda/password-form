@@ -9,12 +9,6 @@ import { appStore } from '../../core/stores/app.store';
 import { masterStore } from '../../core/stores/master.store';
 
 @observer class App extends React.Component {
-  constructor(props) {
-    super(props);
-    //console.log(this.props.appStore);
-    this.store = this.props.appStore;
-  }
-
   componentDidMount() {
     appStore.loadData();
   }
@@ -26,11 +20,12 @@ import { masterStore } from '../../core/stores/master.store';
 
 
   render() {
+    console.log(window.location.href)
     return (
       <main>
         {this.headerSection()}
         <div className="App-body">
-          {/* <img role="presentation" src={logo} /> */}
+          {/* <img role="userpresentation" src={logo} /> */}
           <BrowserRouter>
             <Provider store={masterStore}>
               <Routers route={masterStore.currentView} isAuthenticated={masterStore.loginStore.isAuthenticated} />

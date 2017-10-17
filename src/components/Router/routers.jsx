@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 
 //routes
 import LoginAuth from '../Login/LoginAuth';
+import {Welcome} from '../Welcome/Welcome';
 
 @observer class Routers extends React.Component {
   
@@ -31,13 +32,14 @@ import LoginAuth from '../Login/LoginAuth';
       <Switch>
         {/* <Route path="/error" component={this.errorContent} /> */}
         {/* <Route path="/session-timeout" component={SessionTimeoutPage} /> */}
+        <Route path="/" component={Welcome} />
         <Route component={this.notFound} />
       </Switch>
     )
   }
   
   render(){
-    console.log(0, window.location, this.props.isAuthenticated)
+    console.log(window.location)
     return (
       // if the user isn't authenticated, alway send them to the login page. This check will run on every render
       this.props.isAuthenticated ? (this.routes()) : (this.forceLogin())
