@@ -1,19 +1,20 @@
 import React from 'react';
-import {observer} from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { SignInPrompt } from '../SignInPrompt/SignInPrompt';
 import '../../../styles/Login/login.css';
 
-@observer class LoginAuth extends React.Component{
-  constructor(props){
+@inject('store')
+@observer class LoginAuth extends React.Component {
+  constructor(props) {
     super(props);
-    this.store = this.props.store;
+    console.log(this.props.store)
+    this.store = this.props.store.loginStore;
   }
-  handleSubmit = event => event.preventDefault();
+  // handleSubuser-mit = event => event.preventDefault();
 
-  handleChange=(e)=>{
-    const target_id=e.target.id;
-    console.log(target_id);
+  handleChange = (e) => {
+    const target_id = e.target.id;
     switch (target_id) {
       case 'uid':
         return this.store.updateUserId(e.target.value);
@@ -24,23 +25,24 @@ import '../../../styles/Login/login.css';
     }
   }
 
-  loginFailedMessage=()=>this.store.errorLogin ?
-                          <p className="error-login">{this.store.errorLogin}
-                          <span className="glyphicon glyphicon-warning-sign"></span> </p>:null
+  loginFailedMessage = () => this.store.errorLogin ?
+    <p className="error-login">{this.store.errorLogin}
+      <span className="glyphicon glyphicon-warning-sign"></span> </p> : null
 
-  onButtonClick =()=>{
-    const {userid,password} = this.store.loginInfo;
-    console.log(userid,password);
-    this.store.login(userid,password);
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { userid, password } = this.store.loginInfo;
+    console.log(userid, password);
+    this.store.login(userid, password);
     //this.store.validateSignIn(userid,password);
   }
 
-  validateForm=()=>this.store.loginInfo.userid && this.store.loginInfo.password
+  validateForm = () => this.store.loginInfo.userid && this.store.loginInfo.password
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="Login">
-        <SignInPrompt/>
+        <SignInPrompt />
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="uid">
             <ControlLabel>User ID: </ControlLabel>
@@ -57,10 +59,10 @@ import '../../../styles/Login/login.css';
               type="pwd"
             />
           </FormGroup>
-          <Button className="btn-md sign-in" disabled={!this.validateForm()} onClick={this.onButtonClick} type="submit">
+          <Button className="btn-md sign-in" disabled={!this.validateForm()} onClick={this.handleSubmit} type="submit">
             Sign In
           </Button>
-         {this.loginFailedMessage()}
+          {this.loginFailedMessage()}
         </form>
 
       </div>
