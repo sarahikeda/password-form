@@ -1,13 +1,13 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import { Route, Redirect, Switch } from 'react-router-dom';
 
 //routes
 import LoginAuth from '../Login/LoginAuth';
 import { Welcome } from '../Welcome/Welcome';
 
-@observer class Routers extends React.Component {
 
+@observer class Routers extends React.Component {
+  
   notFound() {
     return (
       <div>
@@ -24,14 +24,16 @@ import { Welcome } from '../Welcome/Welcome';
 
   // If we match a path, render it, otherwise fall back on "notFound" - notFound should really be a full component, but we're keeping things simple here.
   routes() {
-    return (
-      <Switch>
-        <Route path="/" component={Welcome} />
-        {/* <Route path="/error" component={this.errorContent} /> */}
-        {/* <Route path="/session-timeout" component={SessionTimeoutPage} /> */}
-        <Route component={this.notFound} />
-      </Switch>
-    )
+    switch (this.props.route){
+      case '/':
+        return <Welcome />
+        break;
+      case '/edit-app':
+        return this.notFound();
+        break;
+      default:
+      return "Text";
+    }
   }
 
   render() {
