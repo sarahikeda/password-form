@@ -8,10 +8,8 @@ import '../../../styles/Login/login.css';
 @observer class LoginAuth extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.store)
     this.store = this.props.store.loginStore;
   }
-  // handleSubuser-mit = event => event.preventDefault();
 
   handleChange = (e) => {
     const target_id = e.target.id;
@@ -25,19 +23,28 @@ import '../../../styles/Login/login.css';
     }
   }
 
-  loginFailedMessage = () => this.store.errorLogin ?
-    <p className="error-login">{this.store.errorLogin}
-      <span className="glyphicon glyphicon-warning-sign"></span> </p> : null
-
   handleSubmit = (e) => {
     e.preventDefault();
     const { userid, password } = this.store.loginInfo;
-    console.log(userid, password);
     this.store.login(userid, password);
-    //this.store.validateSignIn(userid,password);
   }
 
-  validateForm = () => this.store.loginInfo.userid && this.store.loginInfo.password
+  loginFailedMessage() {
+    return (
+      this.store.errorLogin
+        ? (
+          <p className="error-login">{this.store.errorLogin}
+            <span className="glyphicon glyphicon-warning-sign"> </span>
+          </p>
+        )
+        : null
+    )
+  }
+
+
+  validateForm() {
+    return this.store.loginInfo.userid && this.store.loginInfo.password
+  }
 
   render() {
     return (
