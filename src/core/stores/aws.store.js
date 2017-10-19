@@ -57,10 +57,10 @@ export default class AWSStore {
     let newFileName = file.saveId + "_APP_DATA";
     let statusDateString = status.toLowerCase() + "_date";
     // make adjustments to the app data
-    newFile.custom_metadata.status = status;
+    newFile.custom_metadata.status = status.toUpperCase();
     newFile.custom_metadata[statusDateString] = moment().format("YYYY-MM-DDTHH:mm:ss.SSS");
     // in case someone put in a reject reason in the current session, or somehow got a reject reason in there, but we aren't currenty rejecting it, make sure it doesn't have a reject reason.
-    if(status !== "REJECTED") {
+    if(status.toUpperCase() !== "REJECTED") {
       newFile.custom_metadata.rejectReason = "";
     }
 

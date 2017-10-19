@@ -19,7 +19,7 @@ class AWSService {
         })
     }
 
-    getFiles = (folder = 'under_review/') => {
+    getFiles = (folder = '') => {
         return s3.listObjects({ Prefix: 'partialsave-data-firstnet/' + folder }).promise()
             .then((data, err) => {
                 if (err) {
