@@ -18,7 +18,8 @@ export const deepCopy = (json) => {
 }
 
 export const getCurrentFolder = file => {
-    let regexCapture = file.Key.match(/(approved|under_review|rejected|withdrawn|draft)\//ig)
+    console.log(file, file)
+    let regexCapture = file.match(/(approved|under_review|rejected|withdrawn|draft)\//ig)
     if(regexCapture) {
         return regexCapture[0];
     } else {

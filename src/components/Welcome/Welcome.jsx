@@ -1,13 +1,11 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import {getCurrentFolder} from '../../utils';
 
 @inject('store')
 @observer export class Welcome extends React.Component {
 
   handleClick = (e, file) => {
     e.preventDefault();
-    console.log(file);
     this.props.store.awsStore.getFile(file.Key)
   }
 
@@ -26,7 +24,6 @@ import {getCurrentFolder} from '../../utils';
           <ul>
           {this.props.store.awsStore.remoteFiles.map((file, key) => {
             let name = file.Key.substr(26);
-            console.log(getCurrentFolder(file))
             if (name.length === 0) return null;
             return (
               <li key={key} onClick={(e) => this.handleClick(e, file)}>{name}</li>

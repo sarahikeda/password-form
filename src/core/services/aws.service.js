@@ -36,8 +36,8 @@ class AWSService {
             .then((data) => {
                 let binary = data.Body;
                 let string = binary.toString('utf-8');
-                let json = JSON.parse(string);
-                return json;
+                data.Body = JSON.parse(string);
+                return data;
             })
     }
 
@@ -63,6 +63,7 @@ class AWSService {
 
     }
 
+        //folder should include the trailing slash (i.e. "approved/")
     deleteFile = (fileName, folder) => {
         if(!fileName || !folder) {
             console.log("You need to specify both a file name and a folder to upload with awsService.putFile");
@@ -70,7 +71,7 @@ class AWSService {
             console.log("Folder:", folder);
             return;
         }
-        let newPath = folder + "/" + fileName;        
+        let newPath = folder + fileName;        
         return s3.deleteObject({Key: newPath}).promise()
             .then(data => {
                 console.log("delete data successful", data);

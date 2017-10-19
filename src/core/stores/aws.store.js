@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { action, observable } from 'mobx';
 import { awsService } from '../services/aws.service';
-import { deepCopy } from '../../utils';
+import { deepCopy, getCurrentFolder } from '../../utils';
 
 
 export default class AWSStore {
@@ -18,6 +18,7 @@ export default class AWSStore {
   @observable errorLogin = '';
   @observable credentialResponse = {};
   @observable currentFile = null;
+  @observable currentMeta = null;
 
   @observable remoteFiles = [];
 
@@ -44,7 +45,8 @@ export default class AWSStore {
   @action getFile = (file) => {
     awsService.getFile(file)
       .then(data => {
-        this.currentFile = data;
+        this.currentMeta = file;
+        this.currentFile = data.Body;
         console.log(this.currentFile)
         this.master.changeView('/app-details');
       })
@@ -56,6 +58,8 @@ export default class AWSStore {
     let newFile = deepCopy(file);
     let newFileName = file.saveId + "_APP_DATA";
     let statusDateString = status.toLowerCase() + "_date";
+    let currentFolder = getCurrentFolder(this.currentMeta);
+    console.log(1, currentFolder)
     // make adjustments to the app data
     newFile.custom_metadata.status = status.toUpperCase();
     newFile.custom_metadata[statusDateString] = moment().format("YYYY-MM-DDTHH:mm:ss.SSS");
@@ -70,7 +74,8 @@ export default class AWSStore {
         // swap the local file to show approved and the approved date to match the remote file.
         this.currentFile = newFile;
         // if upload successful, delete the old file.
-        return awsService.deleteFile(newFileName, baseFolder + "under_review")
+        console.log(2, currentFolder)
+        return awsService.deleteFile(newFileName, baseFolder + currentFolder)
       })
       .then(data => {
         console.log("uploaded and deleted", data);
