@@ -1,39 +1,36 @@
 import React from 'react';
-import {observer} from 'mobx-react';
-import LoginAuth from '../Login/LoginAuth';
-import logo from '../../../images/logo.png';
-//import Search from '../Search/Search';
-import AuthRouter from '../Router/routers';
-import {loginStore} from '../../core/stores/login.store';
+import { observer, Provider } from 'mobx-react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import { masterStore } from '../../core/stores/master.store';
+
+import Routers from '../Router/routers';
 
 @observer class App extends React.Component {
-  constructor(props) {
-		super(props);
-    //console.log(this.props.appStore);
-		this.store = this.props.appStore;
-	}
 
-  componentDidMount() {
-    this.store.loadData();
+
+  headerSection() {
+    return (
+      <div className="App-header">
+        <h3>FirstNet App Review Utility</h3>
+      </div>
+    )
   }
 
-  headerSection=()=>(
-    <div className="App-header">
-      <h3>FirstNet App Review Utility:{this.store.getStatus}</h3>
-    </div>)
-
-  loginBody=()=>(
-    <div className="App-body">
-      <img role="presentation" src={logo}/>
-      <LoginAuth store={loginStore}/>
-    </div>)
-
-  render(){
-    return (<div className="App">
-    {this.headerSection()}
-    <AuthRouter subs={[this.loginBody]} />
-    </div>
-  )
+  // Main App returns only the header (Which should be extracted to a separate component) and the router which decides what should be sown, and handles auth checks
+  render() {
+    return (
+      <main>
+        {this.headerSection()}
+        <div className="App-body">
+          <BrowserRouter>
+            <Provider store={masterStore}>
+              <Routers route={masterStore.currentView} isAuthenticated={masterStore.loginStore.isAuthenticated} />
+            </Provider>
+          </BrowserRouter>
+        </div>
+      </main>
+    );
   }
 }
 
