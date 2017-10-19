@@ -8,8 +8,20 @@ export const stringToBuffer = (string) => {
 
 export const jsonToBuffer = (json) => {
     let string = jsonToString(json);
-    let buffer = stringToBuffer(string);
-    return buffer
+    return stringToBuffer(string);
+}
+
+export const bufferToString = buffer => {
+    return buffer.toString('utf-8');
+}
+
+export const stringToJson = string => {
+    return JSON.parse(string);
+}
+
+export const bufferToJson = buffer => {
+    let string = bufferToString(buffer);
+    return stringToJson(string);
 }
 
 

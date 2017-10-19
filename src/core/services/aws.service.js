@@ -34,12 +34,11 @@ class AWSService {
     getFile = (file) => {
         return s3.getObject({ Key: file }).promise()
             .then((data) => {
-                let binary = data.Body;
-                let string = binary.toString('utf-8');
-                data.Body = JSON.parse(string);
                 return data;
             })
     }
+
+
 
     uploadFile = (file, fileName, folder) => {
         if(!file || !fileName || !folder) {

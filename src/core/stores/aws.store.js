@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { action, observable } from 'mobx';
 import { awsService } from '../services/aws.service';
-import { deepCopy, getCurrentFolder } from '../../utils';
+import { deepCopy, getCurrentFolder, bufferToJson } from '../../utils';
 
 
 export default class AWSStore {
@@ -46,7 +46,7 @@ export default class AWSStore {
     awsService.getFile(file)
       .then(data => {
         this.currentMeta = file;
-        this.currentFile = data.Body;
+        this.currentFile = bufferToJson(data.Body);
         console.log(this.currentFile)
         this.master.changeView('/app-details');
       })
