@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 
 export class ReviewDescription extends React.Component {
   render() {
+    let app = this.props.app;
     return (
       <div className='review-description'>
         <Table className="app-description-info">
@@ -12,7 +13,7 @@ export class ReviewDescription extends React.Component {
                 Short Description:
               </td>
               <td>
-                Lorem ipsum dolor sit amet, ut vix quas nominati. Te vel patrioque liberavisse, quo mollis repudiandae ei. Vidisse vocibus noluisse ei vel, vel omnes percipitur ne. Nusquam evertitur persequeris vel in, blandit platonem ex mei. Ut possit nonumes pri.
+                {app.shortDescription}
               </td>
             </tr>
             <tr>
@@ -20,7 +21,7 @@ export class ReviewDescription extends React.Component {
                 Long Description:
               </td>
               <td>
-                Minimum petentium percipitur at nec, eam erat epicuri signiferumque ei, pri ex inani regione adipiscing. Ea erat ancillae sit. Ut alia idque virtute ius. Dolor utamur dignissim eam ut, labitur gubergren has ea. Animal torquatos ut pri, munere denique est ne, civibus noluisse signiferumque eu sit. In quando repudiare eum, eu habeo eruditi gloriatur sed. Epicurei verterem pri ne.
+                {app.longDescription}
               </td>
             </tr>
             <tr>
@@ -28,7 +29,7 @@ export class ReviewDescription extends React.Component {
                 Version Notes:
               </td>
               <td>
-                Est in impetus invenire elaboraret. Fugit tantas vis at, ius id commodo delenit percipitur, eos iracundia vulputate in. Sea graeci accusamus accommodare et, qui utinam feugiat accusam in, quo cu vituperata temporibus.
+                {app.versionNotes}
               </td>
             </tr>
             <tr>
@@ -36,7 +37,7 @@ export class ReviewDescription extends React.Component {
                 Search Keywords:
               </td>
               <td>
-                Vel eros indoctum ut. Atqui timeam cu ius
+                {app.tags}
               </td>
             </tr>
             <tr>
@@ -44,7 +45,7 @@ export class ReviewDescription extends React.Component {
                 Category:
               </td>
               <td>
-                Vel eros indoctum ut
+                {app.category.map(cat => cat + ", ")}
               </td>
             </tr>
             <tr>
@@ -52,7 +53,40 @@ export class ReviewDescription extends React.Component {
                 Branch Discipline:
               </td>
               <td>
-                Vel eros indoctum ut fabulas offendit
+                {app.segments.map(segment => segment + ", ")}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                About The Developer
+              </td>
+              <td>
+                {app.aboutDev}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Developer Website
+              </td>
+              <td>
+                <a href={app.devWebsite}>{app.devWebsite}</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mobile Screenshots
+              </td>
+              <td>
+                {app.mobileImageUrls.map(imgUrl => {
+                  return (
+                    <img src={imgUrl} height="100" key={imgUrl} />
+                  )
+                })}
+                {app.tabletImageUrls.map(imgUrl => {
+                  return (
+                    <img src={imgUrl} height="100" key={imgUrl} />
+                  )
+                })}
               </td>
             </tr>
           </tbody>
