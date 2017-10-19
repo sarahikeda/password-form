@@ -28,12 +28,10 @@ import { AppDetailsPage } from '../../pages/app-details.page';
     switch (this.props.route){
       case '/':
         return <Welcome />
-        break;
       case '/app-details':
         return <AppDetailsPage />
-        break;
       default:
-      return "Text";
+        return "Text"; 
     }
   }
 

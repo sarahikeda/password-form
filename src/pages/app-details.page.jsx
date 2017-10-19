@@ -10,13 +10,30 @@ import { ReviewApp } from '../components/ReviewApp/ReviewApp';
         store: PropTypes.object.isRequired,
     }
 
+    handleApproveClick = () => {
+        this.props.store.awsStore.changeAppStatus("APPROVED");
+    }
+
+    handleRejectClick = () => {
+        this.props.store.awsStore.changeAppStatus("REJECTED");
+    }
+
+    handleRejectReasonChange = (e) => {
+        console.log(1, e)
+        this.props.store.awsStore.changeRejectReason(e.target.value)
+    }
+
     render() {
         return (
             <section id="edit-page">
                 <div className="container">
                     {/* <AppMetaData app={this.props.app} /> */}
                     {/* <DeveloperMetaData app={this.props.app} /> */}
-                    <ReviewApp app={this.props.store.awsStore.currentFile} />
+                    <ReviewApp 
+                        app={this.props.store.awsStore.currentFile} 
+                        handleApproveClick={this.handleApproveClick} 
+                        handleRejectClick={this.handleRejectClick} 
+                        handleRejectReasonChange={this.handleRejectReasonChange} />
                 </div>
             </section>
         )

@@ -45,7 +45,7 @@ export class ReviewDescription extends React.Component {
                 Category:
               </td>
               <td>
-                {app.category.map(cat => cat + ", ")}
+                {app.category.join(", ")}
               </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@ export class ReviewDescription extends React.Component {
                 Branch Discipline:
               </td>
               <td>
-                {app.segments.map(segment => segment + ", ")}
+                {app.segments.join(", ")}
               </td>
             </tr>
             <tr>
@@ -79,12 +79,12 @@ export class ReviewDescription extends React.Component {
               <td>
                 {app.mobileImageUrls.map(imgUrl => {
                   return (
-                    <img src={imgUrl} height="100" key={imgUrl} />
+                    <img src={imgUrl} alt="mobile-screenshot" height="100" key={imgUrl} />
                   )
                 })}
                 {app.tabletImageUrls.map(imgUrl => {
                   return (
-                    <img src={imgUrl} height="100" key={imgUrl} />
+                    <img src={imgUrl} alt="tablet-screenshot" height="100" key={imgUrl} />
                   )
                 })}
               </td>

@@ -1,4 +1,6 @@
 import AWS from 'aws-sdk';
+
+import * as utils from '../../utils';
 AWS.config.setPromisesDependency(Promise);
 let s3;
 
@@ -12,7 +14,7 @@ class AWSService {
         })
         s3 = new AWS.S3({
             params: {
-                Bucket: "app-publishing-internalQA"
+                Bucket: "app-publishing-poc"
             }
         })
     }
@@ -35,8 +37,48 @@ class AWSService {
                 let binary = data.Body;
                 let string = binary.toString('utf-8');
                 let json = JSON.parse(string);
-                console.log(data.Body, json)
                 return json;
+            })
+    }
+
+    uploadFile = (file, fileName, folder) => {
+        if(!file || !fileName || !folder) {
+            console.log("You need to specify a file, a fileName and a folder to upload with awsService.putFile");
+            console.log("File: ", file);
+            console.log("FileName: ", fileName);
+            console.log("Folder:", folder);
+            return;
+        }
+        let newPath = folder + "/" + fileName;
+        let newBody = utils.jsonToBuffer(file);
+        return s3.upload({Key: newPath, Body: newBody}).promise()
+            .then(data => {
+                console.log("upload successful", data);
+                return data;
+            })
+            .catch(err => {
+                console.log("upload error", err)
+                return new Error(err);
+            })
+
+    }
+
+    deleteFile = (fileName, folder) => {
+        if(!fileName || !folder) {
+            console.log("You need to specify both a file name and a folder to upload with awsService.putFile");
+            console.log("File: ", fileName);
+            console.log("Folder:", folder);
+            return;
+        }
+        let newPath = folder + "/" + fileName;        
+        return s3.deleteObject({Key: newPath}).promise()
+            .then(data => {
+                console.log("delete data successful", data);
+                return data;
+            })
+            .catch(err => {
+                console.log("delete error", err);
+                return new Error(err);
             })
     }
 
