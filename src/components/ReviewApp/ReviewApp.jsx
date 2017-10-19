@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import { ReviewDescription } from '../ReviewDescription/ReviewDescription';
 
-export class AppDetailedInfo extends React.Component {
+export class ReviewApp extends React.Component {
   render() {
     return (
       <div className='app-detailed-info'>

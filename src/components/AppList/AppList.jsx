@@ -1,10 +1,10 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-export class AppReview extends React.Component {
+export class AppList extends React.Component {
   render() {
     return (
-      <div className="app-review">
+      <div className="app-list">
         <Table>
           <tbody>
 {/*map out the elements and check for status rather than hard code*/}            

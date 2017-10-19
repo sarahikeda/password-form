@@ -4,6 +4,7 @@ import { observer } from 'mobx-react';
 //routes
 import LoginAuth from '../Login/LoginAuth';
 import { Welcome } from '../Welcome/Welcome';
+import { AppDetailsPage } from '../../pages/app-details.page';
 
 
 @observer class Routers extends React.Component {
@@ -28,8 +29,8 @@ import { Welcome } from '../Welcome/Welcome';
       case '/':
         return <Welcome />
         break;
-      case '/edit-app':
-        return this.notFound();
+      case '/app-details':
+        return <AppDetailsPage />
         break;
       default:
       return "Text";
