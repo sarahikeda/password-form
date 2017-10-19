@@ -1,13 +1,19 @@
 import {action, observable } from 'mobx';
 
-import { loginStore } from './login.store';
+import AWSStore from './aws.store';
 import { appStore } from './app.store';
 
 class MasterStore {
 
     constructor() {
         this.appStore = appStore;
-        this.loginStore = loginStore;
+        this.awsStore = new AWSStore(this);
+    }
+
+    @observable currentView = "/";
+
+    @action changeView = (view) => {
+        this.currentView = view;
     }
 }
 

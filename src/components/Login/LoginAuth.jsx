@@ -8,7 +8,7 @@ import '../../../styles/Login/login.css';
 @observer class LoginAuth extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.loginStore;
+    this.store = this.props.store.awsStore;
   }
 
   handleChange = (e) => {

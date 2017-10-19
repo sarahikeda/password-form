@@ -1,6 +1,5 @@
 import React from 'react';
 import { observer, Provider } from 'mobx-react';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 import { masterStore } from '../../core/stores/master.store';
 
@@ -23,11 +22,9 @@ import Routers from '../Router/routers';
       <main>
         {this.headerSection()}
         <div className="App-body">
-          <BrowserRouter>
-            <Provider store={masterStore}>
-              <Routers route={masterStore.currentView} isAuthenticated={masterStore.loginStore.isAuthenticated} />
-            </Provider>
-          </BrowserRouter>
+          <Provider store={masterStore}>
+            <Routers route={masterStore.currentView} isAuthenticated={masterStore.awsStore.isAuthenticated} />
+          </Provider>
         </div>
       </main>
     );
