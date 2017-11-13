@@ -1,7 +1,4 @@
+@import './_variables.scss';
 @import './App/App.scss';
-@import './Search/Search.scss';
-@import './Login/Login.scss';
-@import './Welcome/Welcome.scss';
-@import './AppReview/AppReview.scss';
-@import './AppProfile/AppProfile.scss';
-@import './ReviewDescription/ReviewDescription.scss';
+@import './PasswordForm/PasswordForm.scss';
+@import './ChangePasswordButton/ChangePasswordButton.scss'
