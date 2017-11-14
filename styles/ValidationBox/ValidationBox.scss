@@ -4,6 +4,9 @@
 
 .validation-box {
   width: 50vh;
+  position: absolute;
+  margin-top: 40px;
+  z-index: 3;
 }
 
 .validation-circle {
