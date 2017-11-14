@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import PasswordForm from '../Password/PasswordForm';
+import Footer from '../Footer/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,10 +12,13 @@ class App extends React.Component {
   }
   renderApp() {
     return (
-      <main className='container'>
+      <div className='container'>
         <Header/>
-        <PasswordForm {...this.state}/>
-      </main>
+        <main>
+          <PasswordForm {...this.state}/>
+        </main>
+        <Footer/>
+      </div>
     );
   }
 

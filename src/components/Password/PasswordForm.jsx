@@ -6,14 +6,14 @@ import ChangePasswordButton from './ChangePasswordButton';
 class PasswordForm extends React.Component {
   renderPasswordForm() {
     return (
-      <main className='password-form container'>
+      <main className='password-form'>
         <PasswordPrompt/>
         <PasswordField label="Old"/>
         <PasswordField
           label="New"
           needsValidation={true}
           {...this.props}/>
-        <PasswordField label="Confirmed"/>
+        <PasswordField label="Confirm"/>
         <ChangePasswordButton/>
       </main>
     );
