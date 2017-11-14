@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
 class ValidationCondition extends React.Component {
-  render() {
+  renderValidationCondition() {
     return (
       <div className="validation-conditions">
         <li>
@@ -13,6 +13,11 @@ class ValidationCondition extends React.Component {
         </li>
       </div>
     );
+
+  }
+
+  render() {
+    return this.renderValidationCondition();
   }
 }
 

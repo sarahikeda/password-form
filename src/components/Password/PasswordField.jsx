@@ -26,10 +26,10 @@ class PasswordField extends React.Component {
     })
   }
 
-  render() {
-    let validationCheck = this.props.needsValidation && this.state.hasPasswordInput ? <ValidationBox passwordInput={this.state.passwordInput}/> : null
+  renderPasswordField() {
+    let validationCheck = this.props.needsValidation && this.state.hasPasswordInput ? <ValidationBox passwordInput={this.state.passwordInput} {...this.props}/> : null
     return (
-      <div className="password old-password">
+      <div className="password-field old-password">
         <FormGroup>
           <ControlLabel>{this.props.label} Password</ControlLabel>
           <InputGroup>
@@ -49,6 +49,9 @@ class PasswordField extends React.Component {
         </FormGroup>
       </div>
     );
+  }
+  render() {
+    return this.renderPasswordField();
   }
 }
 
