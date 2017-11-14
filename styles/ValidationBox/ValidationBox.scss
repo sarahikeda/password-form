@@ -1,0 +1,14 @@
+.password-conditions-list {
+  list-style-type: none;
+}
+
+.validation-box {
+  width: 50vh;
+}
+
+.validation-circle {
+  padding-right: 5px;
+  &.met{
+    color: $validation-met;
+  }
+}
