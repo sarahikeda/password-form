@@ -1,7 +1,6 @@
 import React from 'react';
 import PasswordPrompt from './PasswordPrompt';
-import OldPassword from './OldPassword';
-import NewPassword from './NewPassword';
+import PasswordField from './PasswordField';
 import ChangePasswordButton from './ChangePasswordButton';
 
 class PasswordForm extends React.Component {
@@ -10,8 +9,9 @@ class PasswordForm extends React.Component {
     return (
       <main className='password-form container'>
         <PasswordPrompt/>
-        <OldPassword/>
-        <NewPassword/>
+        <PasswordField label="Old"/>
+        <PasswordField label="New" needsValidation={true}/>
+        <PasswordField label="Confirmed"/>
         <ChangePasswordButton/>
       </main>
     );
