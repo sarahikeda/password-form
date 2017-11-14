@@ -31,7 +31,7 @@ class PasswordField extends React.Component {
     return (
       <div className="password-field old-password">
         <FormGroup>
-          <ControlLabel>{this.props.label} Password</ControlLabel>
+          <ControlLabel className="password-label">{this.props.label} Password</ControlLabel>
           <InputGroup>
             <FormControl
               className="password-input"
