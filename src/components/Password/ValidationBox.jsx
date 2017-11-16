@@ -3,6 +3,13 @@ import { Panel } from 'react-bootstrap';
 import ValidationConditionsList from '../Validation/ValidationConditionsList';
 
 class ValidationBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      needsValidation: this.props.needsValidation
+    }
+  }
+
   renderValidationBox() {
     return (
       <div className="validation-box">
