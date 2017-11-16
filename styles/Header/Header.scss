@@ -1,0 +1,30 @@
+.navigation-bar {
+  background-color: $body-background-color;
+  margin-left: 0px;
+}
+
+.goldman-logo {
+  height: 80px;
+}
+
+.sub-header {
+  border-left: 1px solid black;
+  padding-top: 10px;
+  margin-left: 0px;
+}
+
+.description-text {
+  padding-left: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.sub-description-text {
+  padding-left: 5px;
+  color: $blue;
+}
+
+.nav-links {
+  margin-top: 10px;
+  color: $blue;
+}
