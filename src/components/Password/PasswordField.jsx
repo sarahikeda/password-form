@@ -28,6 +28,7 @@ class PasswordField extends React.Component {
 
   renderPasswordField() {
     let validationCheck = this.props.needsValidation && this.state.hasPasswordInput ? <ValidationBox passwordInput={this.state.passwordInput} {...this.props}/> : null
+
     return (
       <div className="password-field old-password">
         <FormGroup>
