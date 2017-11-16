@@ -1,15 +1,15 @@
-.navigation-bar {
+.header {
   background-color: $body-background-color;
-  margin-left: 0px;
 }
 
 .goldman-logo {
   height: 80px;
+  padding-left: 0px;
 }
 
 .sub-header {
   border-left: 1px solid black;
-  padding: 10px 0 5px 0;
+  padding: 8px 0 5px 0;
   margin-left: 0px;
   font-size: 12px;
 }
@@ -18,15 +18,17 @@
   padding-left: 5px;
   color: black;
   font-weight: bold;
+  display: block;
 }
 
 .sub-description-text {
+  display: block;
   padding-left: 5px;
   color: $blue;
 }
 
 .nav-links {
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 25px;
   color: $blue;
 }
