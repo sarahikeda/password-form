@@ -12,7 +12,7 @@ class App extends React.Component {
   }
   renderApp() {
     return (
-      <div className='container'>
+      <div className='container app-body'>
         <Header/>
         <main>
           <PasswordForm {...this.state}/>

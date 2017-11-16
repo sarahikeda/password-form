@@ -1,36 +1,37 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 
 class Header extends React.Component {
-  render() {
+  renderHeader() {
     return (
-      <div className="app-header">
-        <Navbar className="navigation-bar">
-          <Navbar.Header>
-            <Navbar.Brand>
-              <img
-                className="goldman-logo"
-                src={require("../../../images/goldman-logo.png")}
-                alt="goldman-logo"/>
-            </Navbar.Brand>
-            <Navbar.Text className="sub-header">
-              <div className="description-text">Private Bank</div>
-              <div className="sub-description-text">SELECT</div>
-            </Navbar.Text>
-           </Navbar.Header>
+      <div className="header">
+        <div className="navigation-header">
+          <Navbar.Brand>
+            <img
+              className="goldman-logo"
+              src={require("../../../images/goldman-logo.png")}
+              alt="goldman-logo"/>
+          </Navbar.Brand>
+          <Navbar.Text className="sub-header">
+            <span className="description-text">Private Bank</span>
+            <span className="sub-description-text">SELECT</span>
+          </Navbar.Text>
+        </div>
         <Navbar.Collapse>
           <Nav pullRight>
             <Navbar.Text>
-              <div className="nav-links">Help</div>
+              <span className="nav-links">Help</span>
             </Navbar.Text>
             <Navbar.Text>
-              <div className="nav-links">Logout</div>
+              <span className="nav-links">Logout</span>
             </Navbar.Text>
           </Nav>
         </Navbar.Collapse>
-        </Navbar>
       </div>
     )
+  }
+  render() {
+    return this.renderHeader();
   }
 }
 
