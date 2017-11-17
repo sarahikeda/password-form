@@ -9,7 +9,6 @@ class ValidationConditionsList extends React.Component {
       condition.rule.test(this.props.passwordInput) ?
         classStyling ='validation-circle met' :
         classStyling = "validation-circle"
-
       return (
         <ValidationCondition
           key={index}

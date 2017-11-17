@@ -1,17 +1,6 @@
-.password-conditions-list {
-  list-style-type: none;
-}
-
 .validation-box {
-  width: 50vh;
+  width: 40vh;
   position: absolute;
   margin-top: 40px;
   z-index: 3;
-}
-
-.validation-circle {
-  padding-right: 5px;
-  &.met{
-    color: $validation-met;
-  }
 }
