@@ -4,6 +4,19 @@ import PasswordField from './PasswordField';
 import ChangePasswordButton from './ChangePasswordButton';
 
 class PasswordForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showValidation: false
+    }
+  }
+
+  toggleValidation = () => {
+    this.setState({
+      showValidation: !this.state.showValidation
+    })
+  }
+
   renderPasswordForm() {
     return (
       <main className='password-form'>
@@ -11,7 +24,8 @@ class PasswordForm extends React.Component {
         <PasswordField label="Old"/>
         <PasswordField
           label="New"
-          needsValidation={true}
+          showValidation={this.state.showValidation}
+          toggleValidation={this.toggleValidation}
           {...this.props}/>
         <PasswordField label="Confirm"/>
         <ChangePasswordButton/>

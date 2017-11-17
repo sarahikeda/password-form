@@ -10,7 +10,6 @@ class PasswordField extends React.Component {
       type: 'password',
       hasPasswordInput: false,
       passwordInput: '',
-      showValidation: true
     }
   }
 
@@ -27,21 +26,12 @@ class PasswordField extends React.Component {
     })
   }
 
-  showValidation = () => {
-    this.setState({
-      showValidation: true
-    })
-  }
-
-  hideValidation = () => {
-    this.setState({
-      showValidation: false
-    })
-  }
-
-
   renderPasswordField() {
-    let validationCheck = this.props.needsValidation && this.state.showValidation && this.state.hasPasswordInput ? <ValidationBox passwordInput={this.state.passwordInput} {...this.props}/> : null
+    let validationCheck = this.props.showValidation && this.state.hasPasswordInput ?
+      <ValidationBox
+        passwordInput={this.state.passwordInput}
+        {...this.props}/> :
+      null
 
     return (
       <div className="password-field">
@@ -51,8 +41,8 @@ class PasswordField extends React.Component {
             <FormControl
               className="password-input"
               type={this.state.type}
-              onFocus={this.showValidation}
-              onBlur={this.hideValidation}
+              onFocus={this.props.toggleValidation}
+              onBlur={this.props.toggleValidation}
               onChange={this.setPasswordInput}/>
             {validationCheck}
             <InputGroup.Addon
