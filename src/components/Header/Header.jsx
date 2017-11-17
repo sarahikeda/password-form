@@ -7,10 +7,8 @@ class Header extends React.Component {
       <div className="header">
         <div className="navigation-header">
           <Navbar.Brand>
-            <img
-              className="goldman-logo"
-              src={require("../../../images/goldman-logo.png")}
-              alt="goldman-logo"/>
+            <div className="logo">
+            </div>
           </Navbar.Brand>
           <Navbar.Text className="sub-header">
             <span className="description-text">Private Bank</span>
