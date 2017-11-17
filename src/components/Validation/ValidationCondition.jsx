@@ -13,7 +13,6 @@ class ValidationCondition extends React.Component {
         </li>
       </div>
     );
-
   }
 
   render() {
